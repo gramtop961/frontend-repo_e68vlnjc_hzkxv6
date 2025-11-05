@@ -1,28 +1,26 @@
-import { useState } from 'react'
+import React from 'react';
+import Header from './components/Header.jsx';
+import Hero from './components/Hero.jsx';
+import Sections from './components/Sections.jsx';
+import Footer from './components/Footer.jsx';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <div className="min-h-screen bg-[#F7F5EF] text-[#141414]">
+      <Header />
+      <Hero />
+      <Sections />
+      <Footer />
+      {/* Optional bottom sticky CTA for mobile */}
+      <div className="fixed bottom-4 left-0 right-0 px-4 md:hidden pointer-events-none">
+        <div className="pointer-events-auto max-w-[1220px] mx-auto">
+          <a href="#order" className="inline-flex items-center justify-center w-full rounded-full bg-[#0E3B2E] text-[#F7F5EF] px-5 py-3 text-sm font-semibold shadow-[0_12px_30px_rgba(0,0,0,0.2)] hover:bg-[#0c3328] transition">
+            Order Now
+          </a>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
